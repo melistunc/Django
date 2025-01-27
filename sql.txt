@@ -1,0 +1,27 @@
+SELECT * FROM demo; yıldız işareti demodaki her şeyi getir demektir
+
+id'si 7 olanları getirmek için: SELECT * FROM demo WHERE id=7;
+tabloda olmayan id numarası yazarsak hiçbir şey gelmez.
+varchar, en fazla kaç karakter alacağını biz belirleyebiliriz. tetx'te ise sabit bir verilmiş aralık vardır.
+
+VERİ EKLEME VE FİLTRELEME
+INSERT INTO demo (name, hint) VALUES ('MEL', 'Test');--demo tablosu içine hangi kolonlara veri ekleyeceğimizi ve ekleyeceğimiz verilerin değerini yazıyoruz
+name hint'e veri ekleyeceğiz. VALUES ekleyeceğimiz şeyler.
+SELECT * FROM demo WHERE name LIKE "%SQL"; --başında ne olursa olsun sonunda SQL olanları getir. (%'den dolayı.). Sadece SQL yazsaydık içinde SQL olanlar gelecekti.
+
+SELECT * FROM demo WHERE id > 10; --id'si 10'dan büyük olanlar gelir. 
+Where'Den sonra bir koşul belirtiyoruz.
+
+
+VERİ GÜNCELLEME VE SİLME
+UPDATE demo SET name="Twilight" WHERE id=3; --id'si 3 olanların ismini twilight yap.
+
+DELETE FROM demo WHERE id=6; -- id'si 6 olan satırı(row) sil.
+
+
+TABLO OLUŞTURMA
+CREATE TABLE IF NOT EXISTS sqltest (id INTEGER PRIMARY KEY, name VARCHAR, age INT, instrument VARCHAR);
+Eğer böyle bir tablo yoksa oluştur.
+INSERT INTO sqltest (name, age, instrument) VALUES ('james', 50, 'Guitar');
+SELECT * FROM sqltest
+
